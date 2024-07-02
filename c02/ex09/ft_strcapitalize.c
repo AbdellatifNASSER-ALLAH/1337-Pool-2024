@@ -12,7 +12,7 @@
 
 char	*ft_strlowcase(char *str)
 {
-	char *orig;
+	char	*orig;
 
 	orig = str;
 	while (*str)
@@ -26,23 +26,22 @@ char	*ft_strlowcase(char *str)
 
 char	*ft_strcapitalize(char *str)
 {
-	char *orig;
-	int	nextup;
+	char	*orig;
+	int		nextup;
 
 	orig = str;
 	nextup = 1;
 	ft_strlowcase(str);
 	while (*str)
 	{
-		if ((*str >= 'a' && *str <= 'z') || (*str >= '0' && *str <='9'))
+		if ((*str >= 'a' && *str <= 'z') || (*str >= '0' && *str <= '9'))
 		{
-			if(nextup && *str >= 'a' && *str <= 'z')
+			if (nextup && *str >= 'a' && *str <= 'z')
 				*str -= 32;
 			nextup = 0;
 		}
 		else
 			nextup = 1;
-
 		str++;
 	}
 	return (orig);
