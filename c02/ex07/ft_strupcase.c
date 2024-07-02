@@ -6,17 +6,20 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 09:04:34 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/02 09:07:42 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/02 21:54:57 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
+	char *orig;
+
+	orig = str;
 	while (*str)
 	{
 		if (*str >= 'a' && *str <= 'z')
 			*str -= 32;
 		str++;
 	}
-	return (str);
+	return (orig);
 }
