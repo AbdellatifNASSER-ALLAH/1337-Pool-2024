@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:24:21 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/03 11:24:01 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/03 11:31:09 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		}
 		dest[i] = '\0';
 	}
-	while (*str)
+	while (*src)
 		j++;
 	return (j);
 }
