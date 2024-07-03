@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 11:02:57 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/03 10:40:00 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/03 11:34:55 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putstr_non_printable(char *str)
 {
 	while (*str)
 	{
-		if (*str < 32 || *str == 127)
+		if (*str < 32 || *str > 126)
 		{
 			ft_to_hex((unsigned char)*str);
 		}
