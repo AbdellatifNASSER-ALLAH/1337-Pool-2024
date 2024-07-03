@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 11:02:57 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/03 10:40:00 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/03 09:12:24 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/03 09:22:53 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_strcmp(char *s1, char *s2)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_to_hex(unsigned char n)
-{
-	char	*hex_d;
-
-	hex_d = "0123456789abcdef";
-	ft_putchar('\\');
-	ft_putchar(hex_d[n / 16]);
-	ft_putchar(hex_d[n % 16]);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	while (*str)
+	i = 0;
+	while (s1[i] && s2[i])
 	{
-		if (*str < 32 || *str == 127)
-		{
-			ft_to_hex((unsigned char)*str);
-		}
+		if (s1[i] == s2[i])
+			i++;
 		else
-		{
-			ft_putchar(*str);
-		}
-		str++;
+			return (s1[i] - s2[i]);
 	}
+	return (s1[i] - s2[i]);
 }
