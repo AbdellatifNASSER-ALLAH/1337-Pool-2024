@@ -6,11 +6,9 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 07:10:19 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/04 10:26:40 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:04:02 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// EX05
 
 unsigned int	ft_strlen(char *str)
 {

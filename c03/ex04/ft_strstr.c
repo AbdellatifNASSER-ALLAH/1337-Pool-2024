@@ -6,11 +6,9 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 21:20:34 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/04 07:09:03 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:03:43 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//EX04
 
 char	*ft_strstr(char *str, char *to_find)
 {

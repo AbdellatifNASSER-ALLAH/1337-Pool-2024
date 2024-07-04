@@ -6,11 +6,9 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 17:47:09 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/03 21:03:17 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:02:57 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// EX02
 
 char	*ft_strcat(char *s1, char *s2)
 {
@@ -26,5 +24,4 @@ char	*ft_strcat(char *s1, char *s2)
 	}
 	s1[i] = 0;
 	return (s1);
-}
 }
