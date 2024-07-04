@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 09:12:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/03 17:30:27 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/03 21:20:34 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/04 07:09:03 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
+//EX04
 
-	i = 0;
-	while (s1[i] && s2[i])
+char	*ft_strstr(char *str, char *to_find)
+{
+	char	*s;
+	char	*f;
+
+	if (!*to_find)
+		return (str);
+	while (*str)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		s = str;
+		f = to_find;
+		while (*s && *f && (*s == *f))
+		{
+			s++;
+			f++;
+		}
+		if (!*f)
+			return (str);
+		str++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (0);
 }

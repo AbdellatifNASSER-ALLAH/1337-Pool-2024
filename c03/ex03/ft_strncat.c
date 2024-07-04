@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 09:12:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/03 17:30:27 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/03 21:05:37 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/03 21:19:25 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	j = 0;
+	while (dest[i])
 		i++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	while (j < nb && src[j])
+		dest[i++] = src[j++];
+	dest[i] = 0;
+	return (dest);
 }

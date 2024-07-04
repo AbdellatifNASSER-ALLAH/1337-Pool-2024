@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 09:12:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/03 17:30:27 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/03 17:47:09 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/03 21:03:17 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+// EX02
+
+char	*ft_strcat(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	while (s1[i])
 		i++;
+	while (*s2)
+	{
+		s1[i++] = *s2;
+		s2++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	s1[i] = 0;
+	return (s1);
+}
 }
