@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 10:34:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/07 11:14:11 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/07 23:42:37 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,34 +47,28 @@ int	invalid_args(char *b, int c)
 	return (0);
 }
 
-char	*ft_to_decimal(char *s, char *b)
+int	ft_to_decimal(char *b, char c)
 {
-	int	i;
-	int	j;
+	int i;
 
 	i = 0;
-	while(s[i])
+	while (b[i])
 	{
-		j = 0;
-		while (b[j])
-		{
-			if (s[i] == b[j])
-				if(
-					s[i] = j + '0';
-			j++;
-		}
-		i++;
+		if (b[i] == c)
+			return (i);
 	}
-	return (*s);
+	return (0);
 }
 
 int	ft_atoi_base(char *str, char *base)
 {
 	int	sing;
 	int	res;
+	int	blen;
 
-	if (invalid_args(base, ft_strlen(base)))
-		return;
+	blen = ft_strlen(base);
+	if (invalid_args(base, blen))
+		return 0;
 	sing = 1;
 	res = 0;
 	while (*str == ' ' || *str == '\t')
@@ -85,10 +79,9 @@ int	ft_atoi_base(char *str, char *base)
 			sing *= -1;
 		str++;
 	}
-	ft_to_decimal(str, base);
-	while (*str >= '0' && *str <= '9')
+	while (*str >= base[0] && *str <= base[blen])
 	{
-		res = res * 10  + (*str - '0');
+		res = res * blen + ft_to_decimal(base, *str);
 		str++;
 	}
 	return (sing * res);
