@@ -1,71 +1,35 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   inter.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/05 10:41:03 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/05 14:07:23 by abdnasse         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <unistd.h>
-
-void	put_char(char c)
-{
-	write(1, &c, 1);
-}
-
-int	exist(char arr[], char c)
-{
-	int i = 0;
-	while ( i < 127)
-	{
-		if (arr[i] == c)
-			return 1;
-		i++;
-	}
-	return 0;
-}
 
 int	main(int ac, char **av)
 {
 	if (ac == 3)
 	{
-		int i , j, k;
-		char *s1, *s2;
-		char f_chars[127];
-        int founded;
+		int	i;
+		char	*f;
+		char	*s;
+		int	arr[255];
 
-		s1 = av[1];
-		s2 = av[2];
-		i = 0, k = 0;
-
-		while (s1[i])
+		i = 0;
+		f = av[1];
+		s = av[2];
+		while (i < 255)
+			arr[i++] = 0;
+		while (*s)
 		{
-			j = 0;
-			founded = 0;
-			while (s2[j])
-			{
-				if (s1[i] == s2[j])
-				{
-					founded = 1;
-					break;
-				}
-				j++;
-			}
-			if (founded && !exist(f_chars, s1[i]))
-			{
-				f_chars[k++] = s1[i];
-			}
-			i++;
+			  if (!arr[(unsigned char)*s])
+				  arr[(unsigned char)*s] = 1;
+			  s++;
 		}
-		f_chars[k] = 0;
-		k = 0;
-		while (f_chars[k])
-			put_char(f_chars[k++]);
+		while (*f)
+		{
+			if (arr[(unsigned char)*f])
+			{
+				write(1, f, 1);
+				arr[(unsigned char)*f] = 0;
+			}
+			f++;
+		}
 	}
-	put_char('\n');
+	write(1, "\n", 1);
 	return 0;
 }
