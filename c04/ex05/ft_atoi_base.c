@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 18:51:55 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/07 12:05:34 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/07 10:34:24 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/07 11:14:11 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,49 @@ int	invalid_args(char *b, int c)
 	return (0);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+char	*ft_to_decimal(char *s, char *b)
 {
-	nbr = (long)nbr;
+	int	i;
+	int	j;
+
+	i = 0;
+	while(s[i])
+	{
+		j = 0;
+		while (b[j])
+		{
+			if (s[i] == b[j])
+				if(
+					s[i] = j + '0';
+			j++;
+		}
+		i++;
+	}
+	return (*s);
+}
+
+int	ft_atoi_base(char *str, char *base)
+{
+	int	sing;
+	int	res;
+
 	if (invalid_args(base, ft_strlen(base)))
 		return;
-	if (nbr < 0){
-		ft_putchar('-');
-		nbr *= -1;
-	}
-	if (nbr < ft_strlen(base))
+	sing = 1;
+	res = 0;
+	while (*str == ' ' || *str == '\t')
+		str++;
+	while (*str == '+' || *str == '-')
 	{
-		ft_putchar(base[nbr]);
+		if (*str == '-')
+			sing *= -1;
+		str++;
 	}
-	else
+	ft_to_decimal(str, base);
+	while (*str >= '0' && *str <= '9')
 	{
-		ft_putnbr_base(nbr / ft_strlen(base), base);
-		ft_putchar(base[nbr % ft_strlen(base)]);
+		res = res * 10  + (*str - '0');
+		str++;
 	}
-
+	return (sing * res);
 }
