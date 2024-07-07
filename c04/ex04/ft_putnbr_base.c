@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:55 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/07 12:05:34 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/07 12:17:47 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,14 @@ int	invalid_args(char *b, int c)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	nbr = (long)nbr;
+//	nbr = (long)nbr;
 	if (invalid_args(base, ft_strlen(base)))
 		return;
+	if ( nbr == -2147483648)
+	{
+		write(1,"-2147483648", 11);
+		return;
+	}
 	if (nbr < 0){
 		ft_putchar('-');
 		nbr *= -1;
