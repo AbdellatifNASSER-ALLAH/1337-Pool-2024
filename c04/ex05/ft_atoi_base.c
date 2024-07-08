@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 10:34:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/08 19:02:20 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/08 23:55:02 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,18 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 int	invalid_args(char *b, int c)
 {
-	char *d;
+	char	*d;
 
-	if(c < 1)
+	if (c < 1)
 		return (1);
 	while (*b)
 	{
 		d = b;
-		while(*d)
+		while (*d)
 		{
-			if (*b == *(d + 1) || *d == '-'  || *d == '+')
+			if (*b == *(d + 1) || *d == '-' || *d == '+')
 				return (1);
 			d++;
 		}
@@ -59,7 +54,7 @@ int	ft_in_base(char *base, char c)
 
 int	ft_to_decimal(char *b, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (b[i])
@@ -79,7 +74,7 @@ int	ft_atoi_base(char *str, char *base)
 
 	blen = ft_strlen(base);
 	if (invalid_args(base, blen))
-		return 0;
+		return (0);
 	sing = 1;
 	res = 0;
 	while (*str == ' ' || *str == '\t')
@@ -92,6 +87,5 @@ int	ft_atoi_base(char *str, char *base)
 	}
 	while (*str && ft_in_base(base, *str))
 		res = res * blen + ft_to_decimal(base, *str++);
-
 	return (sing * res);
 }
