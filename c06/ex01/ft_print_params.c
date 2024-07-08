@@ -20,10 +20,10 @@ void	ft_putstr(char *str)
 
 int	main(int ac, char **av)
 {
+		int i;
+
 	if (ac > 0)
 	{
-		int	i;
-
 		i = 1;
 		while (av[i])
 		{

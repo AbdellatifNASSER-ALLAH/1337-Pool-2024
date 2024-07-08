@@ -43,18 +43,19 @@ void	ft_swap(char **a, char **b)
 
 int	main(int ac, char **av)
 {
+		int i;
+		int j;
+
 	if (ac > 0)
 	{
-		int	i;
-		int	j;
-
 		i = 1;
 		while (i < ac - 1)
 		{
 			j = i + 1;
-			while ( j < ac){
-			if (ft_strcmp(av[i], av[j]) > 0)
-				ft_swap(&av[i], &av[j]);
+			while (j < ac)
+			{
+				if (ft_strcmp(av[i], av[j]) > 0)
+					ft_swap(&av[i], &av[j]);
 				j++;
 			}
 			i++;

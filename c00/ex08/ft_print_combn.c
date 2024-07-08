@@ -46,6 +46,4 @@ void	ft_print_combn(int n)
 {
 	int	i;
 	int	j;
-
-
 }
