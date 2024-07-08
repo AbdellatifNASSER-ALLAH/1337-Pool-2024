@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 10:34:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/07 23:42:37 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/08 19:02:20 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ int	invalid_args(char *b, int c)
 	return (0);
 }
 
+int	ft_in_base(char *base, char c)
+{
+	while (*base)
+	{
+		if (*base++ == c)
+			return (1);
+	}
+	return (0);
+}
+
 int	ft_to_decimal(char *b, char c)
 {
 	int i;
@@ -56,6 +66,7 @@ int	ft_to_decimal(char *b, char c)
 	{
 		if (b[i] == c)
 			return (i);
+		i++;
 	}
 	return (0);
 }
@@ -79,10 +90,8 @@ int	ft_atoi_base(char *str, char *base)
 			sing *= -1;
 		str++;
 	}
-	while (*str >= base[0] && *str <= base[blen])
-	{
-		res = res * blen + ft_to_decimal(base, *str);
-		str++;
-	}
+	while (*str && ft_in_base(base, *str))
+		res = res * blen + ft_to_decimal(base, *str++);
+
 	return (sing * res);
 }
