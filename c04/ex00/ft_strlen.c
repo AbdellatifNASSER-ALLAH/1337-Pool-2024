@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 22:45:07 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/04 22:47:27 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/09 08:41:23 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (*srt++)
+	while (*str++)
 		i++;
 	return (i);
 }

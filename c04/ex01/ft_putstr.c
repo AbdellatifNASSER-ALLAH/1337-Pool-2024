@@ -6,9 +6,11 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 22:48:31 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/04 22:51:15 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/09 08:42:04 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putstr(char *str)
 {

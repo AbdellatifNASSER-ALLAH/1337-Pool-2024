@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 10:34:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/08 23:55:02 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:38:57 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int	invalid_args(char *b, int c)
 		while (*d)
 		{
 			if (*b == *(d + 1) || *d == '-' || *d == '+')
+				return (1);
+			else if ((*d >= 9 && *d <= 13) || *d == 32)
 				return (1);
 			d++;
 		}
@@ -77,7 +79,7 @@ int	ft_atoi_base(char *str, char *base)
 		return (0);
 	sing = 1;
 	res = 0;
-	while (*str == ' ' || *str == '\t')
+	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	while (*str == '+' || *str == '-')
 	{
