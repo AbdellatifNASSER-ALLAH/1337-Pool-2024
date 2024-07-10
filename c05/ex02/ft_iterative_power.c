@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 18:03:42 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/07 18:19:06 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/09 14:40:41 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_iterative_power(int nb, int power)
 	res = 1;
 	if (power == 0)
 		return (1);
+	if (power < 0)
+		return (0);
 	while (power > 0)
 	{
 		res *= nb;
