@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 19:53:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/11 13:00:50 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/11 09:45:43 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/11 10:20:21 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-int	*ft_range(int min, int max)
-{
-	int	*p;
-	int	i;
+# define ABS(value) (if (value < 0)  return (-value); else return (value);)
 
-	if (max <= min)
-		return (0);
-	p = (int *)malloc((max - min) * sizeof(int));
-	i = 0;
-	while (min < max)
-		p[i++] = min++;
-	return (p);
-}
+#endif

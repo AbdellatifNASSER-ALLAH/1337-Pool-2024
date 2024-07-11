@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 19:53:24 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/11 13:00:50 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/11 08:21:45 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/11 08:34:39 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_H
+# define FT_H
 
-int	*ft_range(int min, int max)
-{
-	int	*p;
-	int	i;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	if (max <= min)
-		return (0);
-	p = (int *)malloc((max - min) * sizeof(int));
-	i = 0;
-	while (min < max)
-		p[i++] = min++;
-	return (p);
-}
+#endif
