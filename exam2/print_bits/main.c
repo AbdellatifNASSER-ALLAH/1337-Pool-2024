@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include "print_bits.c"
+#include <stdlib.h>
 
 int main(int ac, char **av)
 {
-	if (ac == 2)
+	if (ac != 2)
 	{
-		print_bits(av[1][0]);
-		printf("\n :-)\n");
+		int i = 1;
+		while(i < ac)
+			print_bits(atoi(av[i++]));
 	}
 	else
 		printf("One param !!\n");
