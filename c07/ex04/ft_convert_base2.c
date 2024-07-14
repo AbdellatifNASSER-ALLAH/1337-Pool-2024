@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 22:29:30 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/10 22:56:17 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/14 03:52:16 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,24 @@ int	ft_strlen(char *s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+int	ft_intlen(int long n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+	{
+		n *= -1;
+		len++;
+	}
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }
 
 int	invalid_args(char *b, int c)
