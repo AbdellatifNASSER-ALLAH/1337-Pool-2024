@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 22:29:30 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/14 03:52:16 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/14 06:28:03 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	invalid_args(char *b, int c)
 	}
 	return (0);
 }
+
 int	ft_in_base(char *base, char c)
 {
 	while (*base)

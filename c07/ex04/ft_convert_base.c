@@ -6,14 +6,18 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 22:30:51 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/14 04:46:02 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/14 06:38:34 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "ft_convert_base2.c"
-#include <unistd.h>
-#include <stdio.h>
+
+int	ft_strlen(char *s);
+int	ft_intlen(int long n);
+int	invalid_args(char *b, int c);
+int	ft_in_base(char *base, char c);
+int	ft_to_decimal(char *b, char c);
+
 void	ft_to_base(int nb, char *base, char **p)
 {
 	if (nb < 0)
@@ -50,12 +54,12 @@ int	ft_atoi_base(char *str, char *base)
 	return (sing * res);
 }
 
-char *ft_convert_base(char *nbr, char *base_from, char *base_to)
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	char	*p;
 	char	*conv;
-	int	res;
-	int	len;
+	int		res;
+	int		len;
 
 	if (invalid_args(base_from, ft_strlen(base_from)))
 		return (NULL);
@@ -68,6 +72,6 @@ char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 		return (NULL);
 	conv = p;
 	ft_to_base(res, base_to, &p);
-	*p = '\0';;
+	*p = '\0';
 	return (conv);
 }
