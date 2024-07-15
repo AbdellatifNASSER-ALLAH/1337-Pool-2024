@@ -6,14 +6,15 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 14:16:22 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/15 13:54:32 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/15 15:18:45 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
 
 int	is_sep(char c, char *charset)
 {
-	while(*charset)
+	while (*charset)
 	{
 		if (*charset == c)
 			return (1);
@@ -24,12 +25,12 @@ int	is_sep(char c, char *charset)
 
 int	ft_size(char *str, char *sep)
 {
-	int count;
+	int	count;
 
-	count = 1;
+	count = 0;
 	while (*str)
 	{
-		while(*str && is_sep(*str , sep))
+		while (*str && is_sep(*str, sep))
 			str++;
 		if (*str)
 			count++;
@@ -39,22 +40,22 @@ int	ft_size(char *str, char *sep)
 	return (count);
 }
 
-int	ft_strlen(char *str)
+int	ft_appand(char *word, char *str, int j, char *sep)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	while (str[j] && !is_sep(str[j], sep))
+		word[i++] = str[j++];
+	word[i] = '\0';
+	return (j);
 }
 
 char	*ft_strdup(char *str, int *index, char *sep, int slen)
 {
 	char	*word;
-	char	*s2;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	i = *index;
 	len = 0;
@@ -62,41 +63,38 @@ char	*ft_strdup(char *str, int *index, char *sep, int slen)
 		i++;
 	*index = i;
 	while (str[i] && !is_sep(str[i], sep))
-		{
-			len++;
-			i++;
-		}
+	{
+		len++;
+		i++;
+	}
 	len = len + (slen * 2) + 1;
-	word = (char *)malloc(len *sizeof(char));
-	i = 0;
-	s2 = sep;
-	while (*sep)
-		word[i++] = *sep++;
-	while (str[*index] && !is_sep(str[*index], sep))
-		word[i++] = str[*index++];
-	while (*s2)
-		word[i++] = *s2++;
-	word[len] = '\0';
-	return (word);	
+	word = (char *)malloc(len * sizeof(char));
+	*index = ft_appand(word, str, *index, sep);
+	return (word);
 }
 
 char	**ft_split(char *str, char *charset)
 {
 	char	**p;
-	int	size;
-	int	i;
-	int	index;
+	int		size;
+	int		slen;
+	int		i;
+	int		index;
 
+	index = 0;
 	size = ft_size(str, charset) + 1;
 	p = (char **)malloc(size * sizeof(char *));
 	if (p == NULL)
 		return (NULL);
+	slen = 0;
+	while (charset[slen])
+		slen++;
 	i = 0;
-	index = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
-		p[i] = ft_strdup(str, &index, charset, ft_strlen(charset));
+		p[i] = ft_strdup(str, &index, charset, slen);
 		i++;
 	}
+	p[i] = 0;
 	return (p);
 }
