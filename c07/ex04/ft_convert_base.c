@@ -12,11 +12,11 @@
 
 #include <stdlib.h>
 
-int	ft_strlen(char *s);
-int	ft_intlen(int long n);
-int	invalid_args(char *b, int c);
-int	ft_in_base(char *base, char c);
-int	ft_to_decimal(char *b, char c);
+int		ft_strlen(char *s);
+int		ft_intlen(int long n);
+int		invalid_args(char *b, int c);
+int		ft_in_base(char *base, char c);
+int		ft_to_decimal(char *b, char c);
 
 void	ft_to_base(int nb, char *base, char **p)
 {

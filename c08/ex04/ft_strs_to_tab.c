@@ -42,20 +42,20 @@ char	*ft_strdup(char *src)
 	return (p);
 }
 
-struct s_stock_str *ft_strs_to_tab(int ac, char **av)
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	int	i;
-	t_stock_str *stock;
+	int			i;
+	t_stock_str	*stock;
 
 	stock = (t_stock_str *)malloc(ac * sizeof(t_stock_str));
 	if (!stock)
 		return (NULL);
 	i = 0;
 	while (i < ac)
-	{	
+	{
 		stock[i].size = ft_strlen(av[i]);
 		stock[i].str = av[i];
-		stock[i].copy = ft_strdup(av[i]);	
+		stock[i].copy = ft_strdup(av[i]);
 		i++;
 	}
 	return (stock);

@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:46:12 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/14 06:44:14 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/14 14:06:39 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,12 @@ int	ft_arrlen(char **arr, int n)
 	return (len);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+void	ft_to_str(char *p, int size, char **strs, char *sep)
 {
-	char	*p;
-	int		i;
-	int		j;
-	int		k;
-	int		n;
+	int	i;
+	int	j;
+	int	k;
 
-	if (size <= 0 || strs == NULL)
-	{
-		p = (char *)malloc(sizeof(char));
-		if (p)
-			p[0] = '\0';
-		return (p);
-	}
-	n = ft_arrlen(strs, size) + ft_strlen(sep) * (size - 1);
-	p = (char *)malloc((n + 1) * sizeof(char));
-	if (p == NULL)
-		return (NULL);
 	i = 0;
 	k = 0;
 	while (i < size)
@@ -67,5 +54,24 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		i++;
 	}
 	p[k] = '\0';
+}
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	char	*p;
+	int		n;
+
+	if (size <= 0 || strs == NULL)
+	{
+		p = (char *)malloc(sizeof(char));
+		if (p)
+			p[0] = '\0';
+		return (p);
+	}
+	n = ft_arrlen(strs, size) + ft_strlen(sep) * (size - 1);
+	p = (char *)malloc((n + 1) * sizeof(char));
+	if (p == NULL)
+		return (NULL);
+	ft_to_str(p, size, strs, sep);
 	return (p);
 }
