@@ -6,11 +6,12 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 17:57:15 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/15 18:54:58 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/17 17:26:30 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "ft_stock_str.h"
 
 void	ft_putnbr(int nbr)
 {

@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 10:47:33 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/17 19:58:51 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/17 22:18:46 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 
 	stock = (t_stock_str *)malloc(ac * sizeof(t_stock_str));
 	if (!stock)
-		return (NULL);
+		return (0);
 	i = 0;
 	while (i < ac)
 	{
@@ -58,6 +58,8 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		stock[i].copy = ft_strdup(av[i]);
 		i++;
 	}
+	stock[i].size = 0;
 	stock[i].str = 0;
+	stock[i].copy = 0;
 	return (stock);
 }
