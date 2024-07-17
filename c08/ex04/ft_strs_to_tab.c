@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 10:47:33 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/15 17:56:31 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/17 19:58:51 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		stock[i].copy = ft_strdup(av[i]);
 		i++;
 	}
+	stock[i].str = 0;
 	return (stock);
 }
