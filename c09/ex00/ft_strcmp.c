@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 20:05:37 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/17 12:25:45 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/16 04:24:01 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/16 04:26:50 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_ultimate_range(int **range, int min, int max)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-
-	if (max <= min)
+	while (*s1 || *s2)
 	{
-		*range = NULL;
-		return (0);
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
-	*range = (int *)malloc((max - min) * sizeof(int));
-	if (!*range)
-		return (-1);
-	i = 0;
-	while (min < max)
-		(*range)[i++] = min++;
-	return (i);
+	return (0);
 }

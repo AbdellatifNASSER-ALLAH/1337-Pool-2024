@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 20:05:37 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/17 12:25:45 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/07/16 04:28:09 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/07/16 04:30:40 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_ultimate_range(int **range, int min, int max)
+void	ft_swap(int *a, int *b)
 {
-	int	i;
-
-	if (max <= min)
+	if (*a != *b)
 	{
-		*range = NULL;
-		return (0);
+		*a ^= *b;
+		*b ^= *a;
+		*a ^= *b;
 	}
-	*range = (int *)malloc((max - min) * sizeof(int));
-	if (!*range)
-		return (-1);
-	i = 0;
-	while (min < max)
-		(*range)[i++] = min++;
-	return (i);
 }
