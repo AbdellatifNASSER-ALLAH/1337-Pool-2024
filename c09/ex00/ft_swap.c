@@ -6,16 +6,15 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 04:28:09 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/07/16 04:30:40 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/07/18 01:16:40 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	if (*a != *b)
-	{
-		*a ^= *b;
-		*b ^= *a;
-		*a ^= *b;
-	}
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

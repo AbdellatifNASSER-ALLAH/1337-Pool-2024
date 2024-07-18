@@ -6,7 +6,7 @@
 #    By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/16 18:27:31 by abdnasse          #+#    #+#              #
-#    Updated: 2024/07/17 22:33:10 by abdnasse         ###   ########.fr        #
+#    Updated: 2024/07/18 02:02:48 by abdnasse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes/ft.h
 
 LIB_NAME = libft.a
-SRCS = srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c \
-		  srcs/ft_swap.c srcs/ft_strlen.c
+SRCS = ./srcs/ft_putchar.c ./srcs/ft_putstr.c ./srcs/ft_strcmp.c \
+	   ./srcs/ft_swap.c ./srcs/ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -25,7 +25,7 @@ $(LIB_NAME): $(OBJS)
 	ar rc $@ $^
 	ranlib $@
 
-$(SRCS/%.o): $(SRCS/%.c)
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean: 
